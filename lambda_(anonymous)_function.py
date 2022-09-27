@@ -29,3 +29,7 @@ for i in l:
     # your code here
     def my_lambda(x): return (x % 2) != 0
     print(my_lambda(i))
+
+# another example
+l2 = list(map(lambda x: x*2, l))
+print(l2)
