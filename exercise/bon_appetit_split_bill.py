@@ -1,5 +1,4 @@
 def bonAppetit(bill, k, b):
-    # Write your code here
     # "//" agar hasilnya integer, bukan float
     anna_paid = (sum(bill) - bill[k])//2
     print("Bon Appetit" if anna_paid == b else abs(anna_paid-b))
