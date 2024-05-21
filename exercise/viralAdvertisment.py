@@ -20,12 +20,24 @@ return 24 then.
 
 
 def viralAdvertising(n):
+    #SOLUSI 1
     # di hari pertama itu 2 orang pasti ngelike ads kita, jd kita gk perlu looping day 1
-    like_the_ads = [2]
-    for _ in range(n-1):  # kita n-1 karna kita hanya ingin tahu day2 berikutnya, karna day 1 udah pasti 2 yg like
-        # kita append dengan data paling akhir dari array, lalu di kali 3, lalu dibagi "floor (//)" setengahnya, karna selalu setengahnya yang mau like, begitu terus sampai hari yg terakhir, contoh floor = 7//2=3, 12//5=2
-        like_the_ads.append(like_the_ads[-1]*3//2)
-    return sum(like_the_ads)
+    # like_the_ads = [2]
+    # for _ in range(n-1):  # kita n-1 karna kita hanya ingin tahu day2 berikutnya, karna day 1 udah pasti 2 yg like
+    #     # kita append dengan data paling akhir dari array, lalu di kali 3, lalu dibagi "floor (//)" setengahnya, karna selalu setengahnya yang mau like, begitu terus sampai hari yg terakhir, contoh floor = 7//2=3, 12//5=2
+    #     like_the_ads.append(like_the_ads[-1]*3//2)
+    # return sum(like_the_ads)
+
+    #SOLUSI 2
+    people_advertised = 5
+    total_likes_on_final_day = 0
+
+    for _ in range(n):
+        like = people_advertised//2
+        people_advertised = like*3
+        total_likes_on_final_day += like
+
+    return total_likes_on_final_day
 
 
 print(viralAdvertising(5))
