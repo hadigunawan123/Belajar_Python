@@ -49,8 +49,30 @@ print("angka pertama =  %d" % (result))
 
 print("="*25)
 # more example
+def math(*args,**kwargs):
+    output = 0
+    if kwargs['option'] =='tambah':
+        for angka in args:
+            output += angka
+    elif kwargs['option'] == 'kali':
+        output = 1
+        for angka in args:
+            output *= angka
+    elif kwargs['option'] == 'bagi':
+        output = args[0]
+        for angka in args:
+            output /= angka
+    return output
+
+hasil1 = math(1,2,3,4,5,6,option = 'tambah')
+hasil2= math(1,2,3,4,5,6,option = 'kali')
+hasil3 = math(1,2,3,4,5,6,option = 'bagi')
+print(f"Jumlah = {hasil1}")
+print(f"Kali = {hasil2}")
+print(f"bagi = {hasil3}")
 
 
+#more example
 def adder(*num):
     sum = 0
 
